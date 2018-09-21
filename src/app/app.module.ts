@@ -16,6 +16,11 @@ const appRoutes : Routes = [
   {
     path : 'bitcoin',
     component : BitcoinComponent
+  },
+  {
+    path : '',
+    redirectTo : '/homepage',
+    pathMatch : 'full'
   }
 ]
 
