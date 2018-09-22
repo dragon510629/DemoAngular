@@ -1,9 +1,9 @@
-<div *ngFor= "let item of news" class="jumbotron">
+
+<div *ngFor= "let item of news, let i = index" class="jumbotron">
     <h1 class="display-4">{{item.source.name}}</h1>
     <p class="lead">{{item.title}}</p>
     <hr class="my-4">
     <p>{{item.content}}</p>
     
-    <button (click)="onDetail(item.source.id)" type="button" class="btn btn-info">Lear more</button>
-    
-  </div>
+    <a [routerLink]="['/detail',i]" class="nav-link">Read More</a>
+</div>

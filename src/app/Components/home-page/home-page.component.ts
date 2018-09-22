@@ -8,22 +8,22 @@ import { NewsService } from '../../Service/news.service';
     styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-
+    public index : number = null;
     public news : any [];
+
     constructor(public newservice: NewsService) { }
 
     ngOnInit() {
         this.getAll();
     }
 
-
+    
     getAll() {
         this.newservice.getAll().subscribe((data: any) => {
             this.news = data.articles;
-            console.log(this.news);
         });
     }
     onDetail(value){
-        console.log(value);  
+        this.index = value;
     }
 }
